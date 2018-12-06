@@ -23,7 +23,6 @@ def perform_reaction(polymer):
             stack.append(current)
     return len(stack)
 
-
 if __name__ == '__main__':
     polymer = ''
     with open('input.txt', 'r') as f:

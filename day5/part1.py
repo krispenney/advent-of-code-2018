@@ -6,7 +6,6 @@ def should_react(current, previous):
     elif current.upper() == previous or current == previous.upper():
         return True
 
-
 if __name__ == '__main__':
     with open('input.txt', 'r') as f:
         stack = []
