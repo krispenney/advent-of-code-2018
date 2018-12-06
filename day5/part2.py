@@ -30,13 +30,7 @@ if __name__ == '__main__':
 
     unique_components = set(polymer.lower())
 
-    min_length = 2**31
+    perform_reaction_with_sub = lambda p, c: perform_reaction(p.replace(c, '').replace(c.upper(), ''))
+    result = min(map(lambda comp: perform_reaction_with_sub(polymer, comp), unique_components))
 
-    for comp in unique_components:
-        sub_polymer = polymer.replace(comp, '').replace(comp.upper(), '')
-        result = perform_reaction(sub_polymer)
-
-        if result < min_length:
-            min_length = result
-
-    print('Length of sequence:', min_length)
+    print("Minimum polymer length:", result)
